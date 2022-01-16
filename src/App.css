@@ -1,38 +1,637 @@
+* {
+  font-family: "Sora", sans-serif;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.Alert {
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  background-color: #212529;
+  padding: 5px;
+  gap: 5px;
+  margin: 6px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.Alert:hover {
+  border: solid red 1px;
+  padding-top: -4px;
+}
+
+.AlertButtonContainer {
+  padding-left: 5px;
+}
+
+.AlertsContainer {
+  position: absolute;
+  overflow: auto;
+  bottom: 0;
+  gap: 5px;
+  padding: 10px;
+  width: 100%;
+  max-height: 850px;
+}
+
+.AlertsButton {
+  color: #212529;
+  background-color: rgb(168, 1, 1);
+  font-weight: bold;
+  font-size: 20px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-self: center;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.AlertsButtonNone {
+  color: #212529;
+  background-color: #bd7171;
+  font-weight: bold;
+  font-size: 20px;
+  justify-content: center;
+  align-self: center;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.AlertsButtonNone:hover {
+  cursor: not-allowed;
+}
+
+.AlertDescription {
+  font-size: smaller;
+  padding: 10px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.AlertHeadlineTitle {
+  font-weight: bold;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.AppLogo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3px;
+}
+
+.AppTitle {
+  font-size: x-large;
+}
+
+.bg-myColor {
+  color: black;
+}
+
+.BackgroundClear {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(31, 31, 31, 0.5); /* Tint color */
+  background-blend-mode: darken;
+  background-image: url("./images/Clear.jpg");
+}
+
+.BackgroundCloudy {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(31, 31, 31, 0.5); /* Tint color */
+  background-blend-mode: darken;
+  background-image: url("./images/Cloudy.jpg");
+}
+
+.BackgroundDarkClouds {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(31, 31, 31, 0.5); /* Tint color */
+  background-blend-mode: darken;
+  background-image: url("./images/DarkClouds.jpg");
+}
+
+.BackgroundDefault {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(31, 31, 31, 0.5);
+  background-blend-mode: darken;
+  background-image: url("./images/defaultWeather.jpg");
+}
+
+.BackgroundFog {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(31, 31, 31, 0.5); /* Tint color */
+  background-blend-mode: darken;
+  background-image: url("./images/Fog.png");
+}
+
+.BackgroundRain {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(31, 31, 31, 0.5); /* Tint color */
+  background-blend-mode: darken;
+  background-image: url("./images/Rain.jpg");
+}
+
+.BackgroundSnow {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(31, 31, 31, 0.5); /* Tint color */
+  background-blend-mode: darken;
+  background-image: url("./images/Snow.jpg");
+}
+
+.BackgroundSunny {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(31, 31, 31, 0.5); /* Tint color */
+  background-blend-mode: darken;
+  background-image: url("./images/Sunny.jpg");
+}
+
+.BackgroundThunder {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(31, 31, 31, 0.5); /* Tint color */
+  background-blend-mode: darken;
+  background-image: url("./images/Thunder.jpg");
+}
+
+.bg-myColor {
+  background-color: #141414;
+}
+
+.ConditionsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-size: 13px;
+}
+
+.ConditionsContainerMobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  padding-bottom: 75px;
+}
+
+.Container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 10px;
+}
+
+.ConditionStats {
+  list-style-type: none;
+  color: white;
+}
+
+.ConditionTitle {
+  padding-left: 20px;
+  font-weight: bold;
+  list-style-type: none;
+  color: white;
+}
+
+.Date {
+  font-weight: bold;
+  color: white;
+}
+
+.DayContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.DegreesMax {
+  display: flex;
+  align-items: flex-start;
+  font-size: 10px;
+  padding-top: 1px;
+  color: red;
+}
+
+.DegreesMin {
+  display: flex;
+  align-items: flex-start;
+  font-size: 10px;
+  padding-top: 1px;
+  color: white;
+}
+
+.DegreesMain {
+  display: flex;
+  padding-top: 5px;
+  font-size: 25px;
+  color: white;
+}
+
+.FeelsLike {
+  font-weight: lighter;
+}
+
+.ForecastsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1 1 auto;
+}
+
+.ForecastDegreesMax {
+  display: flex;
+  align-items: flex-start;
+  font-size: 16px;
+  padding-top: 1px;
+  color: red;
+}
+
+.ForecastDegreesMin {
+  display: flex;
+  align-items: flex-start;
+  font-size: 16px;
+  padding-top: 1px;
+  color: white;
+}
+
+.ForecastMaxTemperature {
+  font-size: 16px;
+  color: red;
+}
+
+.ForecastMinTemperature {
+  font-size: 16px;
+  color: white;
+}
+
+.ForecastMinMaxTempContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 9px;
+}
+
+.ImageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+}
+
+.Instruction {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.InstructionScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 100px;
+  color: white;
+}
+
+.Justify {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.LoadingScreen {
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+}
+
+.Location {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: white;
+}
+
+.MinMaxTempContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.MaxTemperature {
+  color: red;
+  font-size: 16px;
+}
+
+.MinTemperature {
+  font-size: 16px;
+  color: white;
+}
+
+.Precipitation {
+  color: white;
+}
+
+.PrecipitationContainer {
+  display: flex;
+  justify-content: space-evenly;
+  width: 98px;
+  font-size: 14px;
+}
+
+.Row {
+  display: flex;
+  flex-direction: row;
+}
+
+.Spinner1 {
+  animation-delay: 0.3s;
+}
+.Spinner2 {
+  animation-delay: 0.2s;
+}
+
+.TemperatureContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Tint {
+  background-color: rgba(31, 31, 31, 0.5);
+  height: 100%;
+}
+
+.TodayContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 15px;
+  width: 66%;
+  margin: auto;
+}
+
+.TodayCondition {
+  color: white;
+}
+
+.TodayTemperature {
+  font-size: 50px;
+  color: white;
+}
+
+.TodayWeatherImage {
+  width: 100px;
+}
+
+.ToggleFCButton {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 100%;
+  padding: 10px;
+  margin: 10px;
+  background-color: #0dcaf0;
+  color: #212529;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.ToggleHeaderFCButton {
+  font-weight: bold;
+}
+/* Animations */
+
+/* Bounce */
+.bouncy {
+  animation: bouncy 3s infinite linear;
+  position: relative;
+}
+@keyframes bouncy {
+  0% {
+    top: 0em;
   }
-  to {
-    transform: rotate(360deg);
+  40% {
+    top: 0em;
+  }
+  43% {
+    top: -0.9em;
+  }
+  46% {
+    top: 0em;
+  }
+  48% {
+    top: -0.4em;
+  }
+  50% {
+    top: 0em;
+  }
+  100% {
+    top: 0em;
+  }
+}
+
+/* Bobbing */
+@-webkit-keyframes hvr-bob {
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+  50% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+@keyframes hvr-bob {
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+  50% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+@-webkit-keyframes hvr-bob-float {
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+@keyframes hvr-bob-float {
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+.hvr-bob {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-bob:hover,
+.hvr-bob:focus,
+.hvr-bob:active {
+  -webkit-animation-name: hvr-bob-float, hvr-bob;
+  animation-name: hvr-bob-float, hvr-bob;
+  -webkit-animation-duration: 0.3s, 1.5s;
+  animation-duration: 0.3s, 1.5s;
+  -webkit-animation-delay: 0s, 0.3s;
+  animation-delay: 0s, 0.3s;
+  -webkit-animation-timing-function: ease-out, ease-in-out;
+  animation-timing-function: ease-out, ease-in-out;
+  -webkit-animation-iteration-count: 1, infinite;
+  animation-iteration-count: 1, infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-direction: normal, alternate;
+  animation-direction: normal, alternate;
+}
+
+/* Grow */
+.hvr-grow {
+  display: flex;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* Fade in */
+.fade-in-image {
+  animation: fadeIn 3s;
+  -webkit-animation: fadeIn 3s;
+  -moz-animation: fadeIn 3s;
+  -o-animation: fadeIn 3s;
+  -ms-animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
