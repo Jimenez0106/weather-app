@@ -112,6 +112,7 @@ const App = () => {
           getInput={weatherSearch}
           fahrenheitToggler={fahrenheitToggler}
           getCoordinates={getCoordinates}
+          isFahrenheit={isFahrenheit}
         />
         <Loading />
       </div>
@@ -128,6 +129,7 @@ const App = () => {
           getInput={weatherSearch}
           fahrenheitToggler={fahrenheitToggler}
           getCoordinates={getCoordinates}
+          isFahrenheit={isFahrenheit}
         />
         <Instructions />
       </div>
@@ -143,6 +145,7 @@ const App = () => {
         getInput={weatherSearch}
         fahrenheitToggler={fahrenheitToggler}
         getCoordinates={getCoordinates}
+        isFahrenheit={isFahrenheit}
       />
       {/* Weather information found */}
       {weather === "" ? (
