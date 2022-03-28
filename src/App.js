@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import API_KEYS from "./data/API_KEYS";
 import getBackground from "./data/BACKGROUND_SELECT";
 import Header from "./components/Header";
 import Today from "./components/Today";
@@ -27,7 +26,7 @@ const App = () => {
       setLoading(true);
       try {
         const res = await axios.get(
-          `http://api.weatherapi.com/v1/forecast.json?key=${process.env.WEATHER_KEY}&q=${location}&days=5&aqi=no&alerts=yes`
+          `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_WEATHER_KEY}&q=${location}&days=5&aqi=no&alerts=yes`
         );
         if (res.data === undefined) return;
         setLoading(false);
@@ -58,7 +57,7 @@ const App = () => {
     navigator.geolocation.getCurrentPosition(async (position) => {
       try {
         const res = await axios.get(
-          `http://www.mapquestapi.com/geocoding/v1/reverse?key=${process.env.MAP_KEY}&location=${position.coords.latitude},${position.coords.longitude}`
+          `http://www.mapquestapi.com/geocoding/v1/reverse?key=${process.env.REACT_APP_MAP_KEY}&location=${position.coords.latitude},${position.coords.longitude}`
         );
         if (res.data === undefined) return;
         setLocation(res.data.results[0].locations[0].adminArea5);
@@ -95,6 +94,7 @@ const App = () => {
           searchHandler={searchHandler}
           getInput={weatherSearch}
           fahrenheitToggler={fahrenheitToggler}
+          isFahrenheit={isFahrenheit}
           getCoordinates={getCoordinates}
         />
         <Landing />
@@ -187,6 +187,7 @@ const App = () => {
               <Alerts
                 alerts={weather.alerts.alert}
                 fahrenheitToggler={fahrenheitToggler}
+                isFahrenheit={isFahrenheit}
               />
             </div>
           )}

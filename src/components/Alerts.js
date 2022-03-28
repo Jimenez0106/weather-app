@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Alert from "./Alert";
 
-const Alerts = ({ alerts, fahrenheitToggler }) => {
+const Alerts = ({ alerts, fahrenheitToggler, isFahrenheit }) => {
   const [isAlerts, setAlerts] = useState(false);
   return (
     <div className="AlertsContainer">
@@ -28,7 +28,7 @@ const Alerts = ({ alerts, fahrenheitToggler }) => {
           className="ToggleFCButton d-lg-none"
           onClick={fahrenheitToggler}
         >
-          F/C
+          {isFahrenheit ? "F°" : "C°"}
         </button>
       )}
     </div>

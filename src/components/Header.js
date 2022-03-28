@@ -8,6 +8,7 @@ const Header = ({
   fahrenheitToggler,
   getInput,
   getCoordinates,
+  isFahrenheit,
 }) => {
   return (
     <Navbar bg="myColor" variant="dark" expand="sm">
@@ -43,15 +44,15 @@ const Header = ({
           {/* Search Button */}
           <Button
             className="me-1"
-            variant="outline-info"
-            size="sm"
+            variant="info"
+            size="md"
             type="submit"
             onClick={searchHandler}
           >
             <BiSearchAlt2 size={16} />
           </Button>
           {/* Location Button */}
-          <Button size="sm" variant="outline-info" onClick={getCoordinates}>
+          <Button size="sm" variant="info" onClick={getCoordinates}>
             <BiCurrentLocation size={16} />
           </Button>
         </Form>
@@ -59,10 +60,10 @@ const Header = ({
       {/* Fahrenheit Toggle Button */}
       <Button
         className="ToggleHeaderFCButton me-4  d-none d-lg-flex"
-        variant="outline-info"
+        variant="info"
         onClick={fahrenheitToggler}
       >
-        F/C
+        {isFahrenheit ? "F°" : "C°"}
       </Button>
     </Navbar>
   );

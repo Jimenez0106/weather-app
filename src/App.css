@@ -50,14 +50,14 @@ html {
 }
 
 .AlertsButton {
-  color: #212529;
+  color: #000;
   background-color: rgb(168, 1, 1);
   font-weight: bold;
   font-size: 20px;
-  justify-content: center;
-  align-self: center;
   padding: 10px;
   border-radius: 15px;
+  border: 2px solid black;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .AlertsButtonNone {
@@ -453,17 +453,19 @@ html {
   position: absolute;
   bottom: 0;
   right: 0;
-  border-radius: 100%;
+  border-radius: 15px;
   padding: 10px;
   margin: 10px;
   background-color: #0dcaf0;
-  color: #212529;
+  color: #000;
   font-size: 20px;
   font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .ToggleHeaderFCButton {
   font-weight: bold;
+  width: 40px;
 }
 /* Animations */
 
