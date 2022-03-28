@@ -27,7 +27,7 @@ const App = () => {
       setLoading(true);
       try {
         const res = await axios.get(
-          `http://api.weatherapi.com/v1/forecast.json?key=${API_KEYS.WEATHER_KEY}&q=${location}&days=5&aqi=no&alerts=yes`
+          `http://api.weatherapi.com/v1/forecast.json?key=${process.env.WEATHER_KEY}&q=${location}&days=5&aqi=no&alerts=yes`
         );
         if (res.data === undefined) return;
         setLoading(false);
@@ -58,7 +58,7 @@ const App = () => {
     navigator.geolocation.getCurrentPosition(async (position) => {
       try {
         const res = await axios.get(
-          `http://www.mapquestapi.com/geocoding/v1/reverse?key=${API_KEYS.MAP_KEY}&location=${position.coords.latitude},${position.coords.longitude}`
+          `http://www.mapquestapi.com/geocoding/v1/reverse?key=${process.env.MAP_KEY}&location=${position.coords.latitude},${position.coords.longitude}`
         );
         if (res.data === undefined) return;
         setLocation(res.data.results[0].locations[0].adminArea5);
