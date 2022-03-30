@@ -24,12 +24,7 @@ const Alerts = ({ alerts, fahrenheitToggler, isFahrenheit }) => {
           })}
         </div>
       ) : (
-        <button
-          className="ToggleFCButton d-lg-none"
-          onClick={fahrenheitToggler}
-        >
-          {isFahrenheit ? "F°" : "C°"}
-        </button>
+        ""
       )}
     </div>
   );

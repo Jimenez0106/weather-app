@@ -90,11 +90,8 @@ html {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 3px;
-}
-
-.AppTitle {
-  font-size: x-large;
+  justify-content: center;
+  margin-left: 5px;
 }
 
 .bg-myColor {
@@ -215,6 +212,11 @@ html {
   background-color: #141414;
 }
 
+.btn:hover {
+  background-color: #0dcaf0;
+  border-color: #0dcaf0;
+}
+
 .ConditionsContainer {
   display: flex;
   flex-direction: row;
@@ -285,6 +287,28 @@ html {
   color: white;
 }
 
+.FCToggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: left center;
+  border-radius: 2em;
+  margin-left: 2px;
+  margin-bottom: 0.25em;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
+}
+
+.form-check-input:checked {
+  background-color: #31d2f2;
+}
+
+.FCToggleText {
+  margin-bottom: 0;
+  color: white;
+  margin-right: 3;
+  font-weight: bold;
+}
+
 .FeelsLike {
   font-weight: lighter;
 }
@@ -328,6 +352,15 @@ html {
   flex-direction: row;
   justify-content: center;
   gap: 9px;
+}
+
+.form-control {
+  border: 2px solid black;
+  width: 200px;
+}
+
+.form-control:hover {
+  border: 2px solid #0dcaf0;
 }
 
 .ImageContainer {
@@ -392,6 +425,13 @@ html {
   color: white;
 }
 
+.Navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .Precipitation {
   color: white;
 }
@@ -406,6 +446,8 @@ html {
 .Row {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .Spinner1 {
@@ -466,6 +508,16 @@ html {
 .ToggleHeaderFCButton {
   font-weight: bold;
   width: 40px;
+}
+
+.tooltip-arrow {
+  z-index: -5;
+}
+
+.tooltip-inner {
+  background-color: white;
+  color: #000;
+  border-radius: 15px;
 }
 /* Animations */
 

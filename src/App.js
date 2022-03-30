@@ -174,15 +174,8 @@ const App = () => {
           {weather.alerts.alert.length === 0 ? (
             <div className="AlertsContainer">
               <div className="AlertButtonContainer">
-                {" "}
                 <button className="AlertsButtonNone">No Alerts</button>
               </div>
-              <button
-                className="ToggleFCButton d-lg-none"
-                onClick={fahrenheitToggler}
-              >
-                F/C
-              </button>
             </div>
           ) : (
             //Alerts found container
