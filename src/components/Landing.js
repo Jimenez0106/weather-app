@@ -4,7 +4,12 @@ const Landing = () => {
   return (
     <div className="BackgroundDefault">
       <div className="LoadingScreen">
-        Search for your city to get the latest weather and alerts!
+        <h1 style={{ textAlign: "center" }}>
+          Welcome to the Dripdrop Weather App
+        </h1>
+        <h3 style={{ textAlign: "center" }}>
+          Search for your location to get the latest weather and alerts!
+        </h3>
       </div>
     </div>
   );

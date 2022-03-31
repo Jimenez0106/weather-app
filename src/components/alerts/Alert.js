@@ -14,10 +14,9 @@ const Alert = ({ alert }) => {
       <div>
         <AiOutlineWarning size={26} color="red" />
       </div>
-      {/* Show Alert Title & Location...Show description when clicked */}
+      {/* Show Alert Title & Location. Description when clicked */}
       {displayInfo ? (
         <div>
-          {" "}
           <h6 className="AlertHeadlineTitle">{headline}</h6>
           <h6 className="AlertHeadlineTitle">{areas}</h6>
           <p className="AlertDescription"> {desc}</p>

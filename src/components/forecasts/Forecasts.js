@@ -1,12 +1,12 @@
 import React from "react";
-import ForecastDay from "./Forecast";
+import Forecast from "./Forecast";
 
 const Forecasts = ({ weather, isFahrenheit, getDayDate, getDayName }) => {
   return (
     <div className="DayContainer fade-in-image">
       {weather.map((day, index) => {
         return (
-          <ForecastDay
+          <Forecast
             key={index}
             day={day}
             isFahrenheit={isFahrenheit}

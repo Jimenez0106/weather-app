@@ -4,7 +4,7 @@ import { Spinner } from "react-bootstrap";
 const Loading = () => {
   return (
     <div className="BackgroundDefault">
-      <div className="LoadingScreen">
+      <div className="LoadingScreen" style={{ flexDirection: "row", gap: "5px" }}>
         <Spinner
           className="Spinner3"
           animation="grow"

@@ -23,6 +23,7 @@ html {
   flex-direction: row;
   align-items: center;
   background-color: #212529;
+  border: solid #000 2px;
   padding: 5px;
   gap: 5px;
   margin: 6px;
@@ -31,7 +32,7 @@ html {
 }
 
 .Alert:hover {
-  border: solid red 1px;
+  border: solid red 2px;
   padding-top: -4px;
 }
 
@@ -40,11 +41,11 @@ html {
 }
 
 .AlertsContainer {
-  position: absolute;
+  position: fixed;
   overflow: auto;
   bottom: 0;
   gap: 5px;
-  padding: 10px;
+  padding: 25px;
   width: 100%;
   max-height: 850px;
 }
@@ -60,19 +61,21 @@ html {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.AlertsButtonNone {
-  color: #212529;
-  background-color: #bd7171;
-  font-weight: bold;
-  font-size: 20px;
-  justify-content: center;
-  align-self: center;
-  padding: 10px;
-  border-radius: 15px;
+.AlertsButton:hover {
+  background-color: rgb(199, 61, 61) !important;
+  border: 2px solid black !important;
+  color: #000 !important;
 }
 
-.AlertsButtonNone:hover {
-  cursor: not-allowed;
+.AlertsButtonNone {
+  color: #000 !important;
+  background-color: #bd7171 !important;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 15px;
+  border: 2px solid black !important;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .AlertDescription {
@@ -217,6 +220,12 @@ html {
   border-color: #0dcaf0;
 }
 
+.btn:focus {
+  outline: none !important;
+  outline-offset: none !important;
+  background-color: none !important;
+}
+
 .ConditionsContainer {
   display: flex;
   flex-direction: row;
@@ -231,7 +240,6 @@ html {
   justify-content: center;
   align-items: center;
   font-size: 13px;
-  padding-bottom: 75px;
 }
 
 .Container {
@@ -262,22 +270,6 @@ html {
   display: flex;
   flex-direction: row;
   gap: 30px;
-}
-
-.DegreesMax {
-  display: flex;
-  align-items: flex-start;
-  font-size: 10px;
-  padding-top: 1px;
-  color: red;
-}
-
-.DegreesMin {
-  display: flex;
-  align-items: flex-start;
-  font-size: 10px;
-  padding-top: 1px;
-  color: white;
 }
 
 .DegreesMain {
@@ -351,6 +343,7 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   gap: 9px;
 }
 
@@ -377,14 +370,6 @@ html {
   font-size: 20px;
 }
 
-.InstructionScreen {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-bottom: 100px;
-  color: white;
-}
-
 .Justify {
   display: flex;
   flex-direction: column;
@@ -393,13 +378,14 @@ html {
 }
 
 .LoadingScreen {
-  font-size: 36px;
-  font-weight: bold;
-  color: white;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  padding-bottom: 100px;
+  justify-content: center;
+  color: white;
+  height: 100%;
+  padding: 15px;
+  margin-bottom: 85px;
 }
 
 .Location {
@@ -474,8 +460,8 @@ html {
   flex-direction: row;
   justify-content: center;
   padding: 15px;
-  width: 66%;
   margin: auto;
+  border-radius: 15px;
 }
 
 .TodayCondition {
@@ -550,71 +536,25 @@ html {
   }
 }
 
-/* Bobbing */
-@-webkit-keyframes hvr-bob {
-  0% {
-    -webkit-transform: translateY(-8px);
-    transform: translateY(-8px);
-  }
-  50% {
-    -webkit-transform: translateY(-4px);
-    transform: translateY(-4px);
-  }
-  100% {
-    -webkit-transform: translateY(-8px);
-    transform: translateY(-8px);
-  }
-}
-@keyframes hvr-bob {
-  0% {
-    -webkit-transform: translateY(-8px);
-    transform: translateY(-8px);
-  }
-  50% {
-    -webkit-transform: translateY(-4px);
-    transform: translateY(-4px);
-  }
-  100% {
-    -webkit-transform: translateY(-8px);
-    transform: translateY(-8px);
-  }
-}
-@-webkit-keyframes hvr-bob-float {
-  100% {
-    -webkit-transform: translateY(-8px);
-    transform: translateY(-8px);
-  }
-}
-@keyframes hvr-bob-float {
-  100% {
-    -webkit-transform: translateY(-8px);
-    transform: translateY(-8px);
-  }
-}
-.hvr-bob {
+/* Float */
+.hvr-float {
   display: inline-block;
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
 }
-.hvr-bob:hover,
-.hvr-bob:focus,
-.hvr-bob:active {
-  -webkit-animation-name: hvr-bob-float, hvr-bob;
-  animation-name: hvr-bob-float, hvr-bob;
-  -webkit-animation-duration: 0.3s, 1.5s;
-  animation-duration: 0.3s, 1.5s;
-  -webkit-animation-delay: 0s, 0.3s;
-  animation-delay: 0s, 0.3s;
-  -webkit-animation-timing-function: ease-out, ease-in-out;
-  animation-timing-function: ease-out, ease-in-out;
-  -webkit-animation-iteration-count: 1, infinite;
-  animation-iteration-count: 1, infinite;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  -webkit-animation-direction: normal, alternate;
-  animation-direction: normal, alternate;
+.hvr-float:hover,
+.hvr-float:focus,
+.hvr-float:active {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
 }
 
 /* Grow */
@@ -687,5 +627,74 @@ html {
   }
   100% {
     opacity: 1;
+  }
+}
+
+/* Bounce To Left */
+.hvr-bounce-to-left {
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  border-radius: 15px;
+}
+.hvr-bounce-to-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(0, 180, 204);
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  border-radius: 15px;
+}
+.hvr-bounce-to-left:hover,
+.hvr-bounce-to-left:focus,
+.hvr-bounce-to-left:active {
+  color: white;
+  border-radius: 15px;
+}
+.hvr-bounce-to-left:hover:before,
+.hvr-bounce-to-left:focus:before,
+.hvr-bounce-to-left:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  border-radius: 15px;
+}
+
+/* SLIDE */
+.slide {
+  position: relative;
+  left: -1000px;
+  -webkit-animation: slide 0.5s forwards;
+  animation: slide 0.5s forwards;
+  width: 100%;
+}
+
+@-webkit-keyframes slide {
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide {
+  100% {
+    left: 0;
   }
 }

@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import getBackground from "./data/BACKGROUND_SELECT";
-import Header from "./components/Header";
-import Today from "./components/Today";
-import Forecasts from "./components/Forecasts";
-import Alerts from "./components/Alerts";
+import Header from "./components/navbar/Header";
+import Today from "./components/today/Today";
+import Forecasts from "./components/forecasts/Forecasts";
+import Alerts from "./components/alerts/Alerts";
 import Loading from "./components/Loading";
 import Instructions from "./components/Instructions";
 import Landing from "./components/Landing";
+import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
@@ -41,18 +42,18 @@ const App = () => {
     fetchWeather(location);
   }, [location]);
 
-  // Get the day of the week name
+  // Get the day of the week
   const getDayName = (dateStr, locale) => {
     const date = new Date(dateStr);
     return date.toLocaleDateString(locale, { weekday: "long" });
   };
 
-  //change how forecast date is displayed.. "12-8" >>> "12/8"
+  //change forecast date display.. "12-8" >>> "12/8"
   const getDayDate = (dayDate) => {
     return dayDate.substr(5).replace("-", "/");
   };
 
-  //Get user's location reverse by geocoding
+  //Get user's location by reverse geocoding
   const getCoordinates = () => {
     navigator.geolocation.getCurrentPosition(async (position) => {
       try {
@@ -103,7 +104,7 @@ const App = () => {
   }
 
   //Loading screen
-  if (loading) {
+  if (!loading) {
     return (
       <div className="App">
         <Header
@@ -170,22 +171,23 @@ const App = () => {
               getDayName={getDayName}
             />
           </div>
-          {/* No Alerts Found for location and mobile Fahrenheit Toggler  */}
+          {/* No Alerts Found for location */}
           {weather.alerts.alert.length === 0 ? (
             <div className="AlertsContainer">
               <div className="AlertButtonContainer">
-                <button className="AlertsButtonNone">No Alerts</button>
+                <Button disabled variant="danger" className="AlertsButtonNone">
+                  No Alerts
+                </Button>
               </div>
             </div>
           ) : (
             //Alerts found container
-            <div>
-              <Alerts
-                alerts={weather.alerts.alert}
-                fahrenheitToggler={fahrenheitToggler}
-                isFahrenheit={isFahrenheit}
-              />
-            </div>
+
+            <Alerts
+              alerts={weather.alerts.alert}
+              fahrenheitToggler={fahrenheitToggler}
+              isFahrenheit={isFahrenheit}
+            />
           )}
         </div>
       )}
