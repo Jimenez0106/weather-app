@@ -78,7 +78,6 @@ const App = () => {
     if (city === "") return;
     setLocation(city);
     setFirstSearch(false);
-    weatherSearch.current.value = null;
   };
 
   //Alternate fahrenheit and celsius

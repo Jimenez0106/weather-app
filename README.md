@@ -1,5 +1,30 @@
-# Weather App with ReactJS
+# Weather App with ReactJS <img src="https://github.com/Jimenez0106/weather-app/blob/master/src/images/Dripdrop.png" alt="App Logo">
 
-This project is a ReactJS Weather Forecast Application utilizing [weatherapi](https://www.weatherapi.com/) and [mapquestapi](https://developer.mapquest.com/). You are able to search for any locations' city or find your own location through the use of Reverse Geocoding.
+This project is a [ReactJS](https://reactjs.org/) Weather Forecast Application utilizing [WeatherAPI](https://www.weatherapi.com/) and [MapquestAPI](https://developer.mapquest.com/). Styling was done with [React Bootstrap](https://react-bootstrap.github.io/). You are able to search for locations utilizing city/state/country/zip-code or find your own location through the use of Reverse Geocoding. Get the latest weather updates and alerts in your area!
+# Setup
+Clone the repository, move to the directory, and run `npm install`.
+Before running `npm start` and navigating to [http://localhost:3000](http://localhost:3000) in your browser, you must first setup a `.env`. The `.env` file needs to contain the API keys as `Environmental Variables` for the project to function.
+
+As per the [Create React App](https://create-react-app.dev/docs/adding-custom-environment-variables/) docs, custom environment variables need to begin with `REACT_APP_`.
+>REACT_APP_WEATHER_KEY=YOUR_KEY
+To access this variable use `process.env` object.
+>process.env.REACT_APP_WEATHER_KEY
+
+`REACT_APP_WEATHER_KEY` requires a key from (WeatherAPI's 16 day forecast API)[https://openweathermap.org/forecast16].
+`REACT_APP_MAP_KEY` requires a key from (Mapquest's Geocoding API)[https://developer.mapquest.com/documentation/geocoding-api/].
+
+# Disclaimer
+`WARNING:` Do not store any secrets (such as private API keys) in your React app!
+
+Environment variables are embedded into the build, meaning anyone can view them by inspecting your app's files.
+
+# Features
+-Get current and 3 day Weather Forecasts from around the globe.
+-Latest weather alerts in the area.
+-Dynamic background changing based on weather conditions and time.
+
+# Screenshots
 
 <img src="https://github.com/Jimenez0106/weather-app/blob/master/src/images/README/Screenshot_1.png?raw=true" alt="Screenshot 1">
+<img src="https://github.com/Jimenez0106/weather-app/blob/master/src/images/README/Screenshot_2.png?raw=true" alt="Screenshot 2">
+<img src="https://github.com/Jimenez0106/weather-app/blob/master/src/images/README/Screenshot_3.png?raw=true" alt="Screenshot 3">
