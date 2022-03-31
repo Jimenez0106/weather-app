@@ -14,7 +14,7 @@ For Example:
 
 > REACT_APP_WEATHER_KEY=YOUR_KEY <br /> <br />
 
-To access this variable use `process.env` object.<br />
+To access this variable use the `process.env` object.<br />
 
 > process.env.REACT_APP_WEATHER_KEY
 
