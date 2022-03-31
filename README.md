@@ -1,4 +1,4 @@
-# Weather App with ReactJS <img src="https://github.com/Jimenez0106/weather-app/blob/master/src/images/README/Dripdrop.png" alt="App Logo">
+<img src="https://github.com/Jimenez0106/weather-app/blob/master/src/images/README/Dripdrop.png" alt="App Logo"> # Weather App with ReactJS 
 
 This project is a [ReactJS](https://reactjs.org/) Weather Forecast Application utilizing [WeatherAPI](https://www.weatherapi.com/) and [MapquestAPI](https://developer.mapquest.com/). Styling was done with [React Bootstrap](https://react-bootstrap.github.io/). You are able to search for locations utilizing city/state/country/zip-code or find your own location through the use of Reverse Geocoding. Get the latest weather updates and alerts in your area!
 # Setup
