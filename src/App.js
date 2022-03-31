@@ -104,7 +104,7 @@ const App = () => {
   }
 
   //Loading screen
-  if (!loading) {
+  if (loading) {
     return (
       <div className="App">
         <Header
@@ -182,7 +182,6 @@ const App = () => {
             </div>
           ) : (
             //Alerts found container
-
             <Alerts
               alerts={weather.alerts.alert}
               fahrenheitToggler={fahrenheitToggler}
