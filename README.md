@@ -2,7 +2,7 @@
 
 # Weather App with ReactJS :cloud:
 
-This project is a [ReactJS](https://reactjs.org/) Weather Forecast Application utilizing [WeatherAPI](https://www.weatherapi.com/) and [MapquestAPI](https://developer.mapquest.com/). Styling was done with [React Bootstrap](https://react-bootstrap.github.io/). This app allows you to search for locations utilizing city/state/country/zip-code or find your own location through the use of Reverse Geocoding. Get the latest weather updates and alerts in your area!
+This project is a [ReactJS](https://reactjs.org/) Weather Forecast Application utilizing the [WeatherAPI](https://www.weatherapi.com/) and [MapquestAPI](https://developer.mapquest.com/) called by [Axios](https://axios-http.com/docs/intro). Styling was done with [React Bootstrap](https://react-bootstrap.github.io/). This app allows you to search for locations utilizing city/state/country/zip-code or find your own location through the use of Reverse Geocoding. Get the latest weather updates and alerts in your area!
 
 # Live Demo :cloud_with_rain:
 
