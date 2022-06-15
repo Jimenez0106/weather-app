@@ -6,7 +6,7 @@ This project is a [ReactJS](https://reactjs.org/) Weather Forecast Application u
 
 # Live Demo :cloud_with_rain:
 
-[Hosted on Vercel](https://weather-app-theta-sooty.vercel.app/)
+[Hosted on Vercel](https://dripdrop.vercel.app/)
 
 # Setup :hammer_and_wrench:
 
