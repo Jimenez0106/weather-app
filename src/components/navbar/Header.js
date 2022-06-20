@@ -32,14 +32,12 @@ const Header = ({
               src={logo}
               alt="Logo"
               width="50px"
-              height="50px"
             />
             <Image
               className="d-none d-md-block mb-2"
               src={textLogo}
               alt="Logo Text"
-              width="100%"
-              height="50px"
+              height="75px"
             />
           </div>
         </Navbar.Brand>
@@ -60,11 +58,11 @@ const Header = ({
               className="me-1"
               ref={getInput}
             />
-            
+
             {/* Search Button */}
             <OverlayTrigger
               key="search"
-              placement="bottom"
+              placement="right"
               overlay={<Tooltip id={`Search Tooltip`}>Search</Tooltip>}
             >
               <Button
@@ -73,6 +71,7 @@ const Header = ({
                 size="sm"
                 type="submit"
                 onClick={searchHandler}
+                aria-label="search"
               >
                 <BiSearchAlt2 size={16} />
               </Button>
@@ -81,12 +80,17 @@ const Header = ({
             {/* Location Button */}
             <OverlayTrigger
               key="location"
-              placement="bottom"
+              placement="right"
               overlay={
                 <Tooltip id={`Search Tooltip`}>Use your location</Tooltip>
               }
             >
-              <Button size="sm" variant="light" onClick={getCoordinates}>
+              <Button
+                size="sm"
+                variant="light"
+                onClick={getCoordinates}
+                aria-label="Use your location"
+              >
                 <BiCurrentLocation size={16} />
               </Button>
             </OverlayTrigger>
@@ -99,6 +103,7 @@ const Header = ({
             <p className="FCToggleText">F°</p>
             <Form.Check
               className="FCToggle"
+              placeholder="Fahrenheit Toggler"
               size="lg"
               type="switch"
               onClick={fahrenheitToggler}
