@@ -24,6 +24,7 @@ const App = () => {
   //sets weather forecast based on location set by user
   useEffect(() => {
     const fetchWeather = async (location) => {
+      if (location === "") return;
       setLoading(true);
       try {
         const res = await axios.get(

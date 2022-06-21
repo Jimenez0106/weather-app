@@ -31,13 +31,15 @@ const Header = ({
               className="d-none d-md-block"
               src={logo}
               alt="Logo"
-              width="50px"
+              width="auto"
+              height="75px"
             />
             <Image
               className="d-none d-md-block mb-2"
               src={textLogo}
               alt="Logo Text"
               height="75px"
+              width="auto"
             />
           </div>
         </Navbar.Brand>
