@@ -7,7 +7,6 @@ const MobileHeader = ({ logo, textLogo }) => {
       className="justify-content-center d-md-none"
       bg="myColor"
       variant="dark"
-      style={{ height: "50px" }}
     >
       <Navbar.Brand>
         <div className="AppLogo">
