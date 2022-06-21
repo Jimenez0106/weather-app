@@ -11,8 +11,20 @@ const MobileHeader = ({ logo, textLogo }) => {
     >
       <Navbar.Brand>
         <div className="AppLogo">
-          <Image src={logo} alt="Logo" height="75px" width="auto" />
-          <Image src={textLogo} alt="Logo Text" height="75px" width="auto" />
+        <Image
+              className="d-none d-md-block"
+              src={logo}
+              alt="Logo"
+              width="auto"
+              height="75px"
+            />
+            <Image
+              className="d-none d-md-block mb-2"
+              src={textLogo}
+              alt="Logo Text"
+              height="75px"
+              width="auto"
+            />
         </div>
       </Navbar.Brand>
     </Navbar>
