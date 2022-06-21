@@ -7,9 +7,9 @@ const Landing = () => {
         <h1 style={{ textAlign: "center" }}>
           Welcome to the Dripdrop Weather App
         </h1>
-        <h3 style={{ textAlign: "center" }}>
+        <h2 style={{ textAlign: "center" }}>
           Search for your location to get the latest weather and alerts!
-        </h3>
+        </h2>
       </div>
     </div>
   );
