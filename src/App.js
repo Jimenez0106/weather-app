@@ -57,11 +57,13 @@ const App = () => {
   //Get user's location by reverse geocoding
   const getCoordinates = () => {
     navigator.geolocation.getCurrentPosition(async (position) => {
+      setLoading(true)
       try {
         const res = await axios.get(
           `https://www.mapquestapi.com/geocoding/v1/reverse?key=${process.env.REACT_APP_MAP_KEY}&location=${position.coords.latitude},${position.coords.longitude}`
         );
         if (res.data === undefined) return;
+        setLoading(false)
         const loc = res.data.results[0].locations[0];
         const city = loc.adminArea5 || "";
         const state = loc.adminArea3 || "";
