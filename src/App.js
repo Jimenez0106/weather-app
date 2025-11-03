@@ -62,7 +62,11 @@ const App = () => {
           `https://www.mapquestapi.com/geocoding/v1/reverse?key=${process.env.REACT_APP_MAP_KEY}&location=${position.coords.latitude},${position.coords.longitude}`
         );
         if (res.data === undefined) return;
-        setLocation(res.data.results[0].locations[0].adminArea5);
+        const loc = res.data.results[0].locations[0];
+        const city = loc.adminArea5 || "";
+        const state = loc.adminArea3 || "";
+        const country = loc.adminArea1 || "";
+        setLocation(`${city}, ${state}, ${country}`);
         setFirstSearch(false);
       } catch (err) {
         setLoading(false);
